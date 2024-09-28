@@ -1,0 +1,10 @@
+Flask
+Flask-Bcrypt
+Flask-JWT-Extended
+streamlit
+tiktoken
+openai
+python-dotenv
+azure-search-documents
+azure-core
+pyodbc

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  flask:
+    build:
+      context: ./flask_app
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"  # Map port 5001 of the host to port 5000 in the container
+    environment:
+      - FLASK_ENV=development
+
+  streamlit:
+    build:
+      context: ./webpage
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      - flask  # Make sure Flask starts before Streamlit
